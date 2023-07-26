@@ -48,16 +48,17 @@
 
 const myObj = {
   length: 0,
-  pushh: function (params) {
-    this[this.length] = params;
+  pushh: function (element) {
+    this[this.length] = element;
     this.length++;
   },
   length: 0 < length,
-  popp: function (params) {
-    this[this.length] = params;
+  popp: function () {
+    if (this.length === 0) return undefined;
     this.length--;
-  }
+    delete this[this.length];
+  },
 };
-myObj.pushh('1','2','3','4','5','6');
-myObj.popp('1','2');
+myObj.pushh("1", "2", "3", "4", "5", "6");
+myObj.popp("1", "2");
 console.log(myObj);
